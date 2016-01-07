@@ -1,0 +1,42 @@
+div
+{
+    border:solid 2px black;
+}
+
+#all
+{
+    width:980px;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid 2px black;
+}
+#main
+{
+    /*background-image: url(images11//gm.png);*/
+    background-color: antiquewhite;
+    font-weight: bold;
+    height:500px;
+}
+
+#header
+{
+    width:980px;
+    height:280px;
+}
+
+#sidebar
+{
+    background-image: url(images11//bg.jpg);
+    width:200px;
+    float:left;
+    position:absolute;
+    height:500px;
+    position:absolute;
+}
+
+#footer
+{
+    background-color:lightgrey;
+    height: 30px;
+    clear:both;
+}

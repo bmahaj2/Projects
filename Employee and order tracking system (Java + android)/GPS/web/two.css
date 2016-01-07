@@ -1,0 +1,130 @@
+/*div
+{
+   // border:solid 2px black;
+   
+}*/
+
+#all
+{
+    width:980px;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid 2px black;
+
+}
+.stylelabel
+{
+    font-family: times new roman;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: black;
+    font-style: italic;
+}
+
+#main
+{   min-height: 350px;
+    background-color: whitesmoke;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+body
+{
+    background-image: url('images11/b3.jpg');
+    /*    background-color: #66CCFF;*/
+
+}
+.headingstyle
+{
+    font-size: 20px;
+
+}
+.tablestyle
+{
+    /*    font-size: 20px;
+        color:black;
+        min-width: 600px;
+        text-transform: capitalize;*/
+    /*font-family: arial;
+        font-size: 15px;
+        text-transform: capitalize;*/
+    font-family: Arial;
+    font-size:15px;
+    color:#6699ff;
+    /*margin-top:30px;*/
+}
+.heading
+{
+    font-size:40px;
+    color:white;
+    font-family: Forte;
+    background-color: #6699ff;
+
+}
+
+.tfield
+{
+    height: 30px;
+    width: 250px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    font-size: 15px;
+    color: gray;
+}
+.tarea1
+{
+    width:250px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+
+
+}
+.tarea2
+{
+    width:350px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+
+
+}
+.submitsyle
+{
+    border-radius: 5px;
+    font-size: 20px;
+    min-height: 25px;
+    min-width: 100px;
+    background-color: #6699ff;
+    color: white;
+    text-transform: capitalize;
+
+
+}
+
+img
+{
+    display: block;
+}
+
+#header
+{
+    height:200px;
+}
+
+#sidebar
+{
+    background-image: url(images11//bg.jpg);
+    width:200px;
+    float:left;
+    position:absolute;
+    height:500px;
+    position:absolute;
+}
+
+#footer
+{
+    background-color:lightgray;
+    height: 30px;
+    //clear:both;
+}
+

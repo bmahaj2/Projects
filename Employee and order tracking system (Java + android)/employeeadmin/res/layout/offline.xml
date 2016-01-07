@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pattern">
+
+    <TextView
+        android:id="@+id/offtextView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       
+        android:text="From(yyyy-mm-dd HH:mm:ss)" />
+
+    <EditText
+        android:id="@+id/offeditText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/offtextView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+      
+        android:text="To(yyyy-mm-dd HH:mm:ss)" />
+
+    <EditText
+        android:id="@+id/offeditText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <Button
+android:id="@+id/offbutton1"
+android:text="Offline Track"
+android:textColor="#000000"
+android:textSize="30sp"
+android:layout_marginLeft="55dp"
+android:layout_width="200dp"
+android:layout_height="60dp"
+android:background="@drawable/buttonshape"
+android:shadowColor="#A8A8A8"
+android:shadowDx="0"
+android:shadowDy="0"
+android:shadowRadius="5"
+android:onClick="go"
+/>
+
+</LinearLayout>

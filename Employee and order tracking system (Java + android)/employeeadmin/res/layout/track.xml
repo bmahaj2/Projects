@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/pattern">
+  
+
+    <Button
+        android:id="@+id/trackbutton1"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
+      
+        android:text="\n\n\n\nOnline Track"
+        android:onClick="go"
+        android:layout_marginTop="50dp"
+         android:layout_marginLeft="100dp"
+        
+          android:background="@drawable/mark1"/>
+
+    <Button
+        android:id="@+id/trackbutton2"
+        android:layout_width="111dp"
+        android:layout_height="111dp"
+        
+        android:text="\n\n\n\nOffline Track" 
+        android:onClick="go1"
+        android:layout_marginTop="100dp"
+         android:layout_marginLeft="100dp"
+         android:background="@drawable/mark1"/>
+
+</LinearLayout>

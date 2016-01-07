@@ -1,0 +1,16 @@
+---------READ ME-------------
+1) Install android adt setup on your computer.
+2) Install NETBEANS setup on your computer.
+3) Install MySQL setup on your computer.
+4)Import Employee Trackers project into the workspace.
+5)Import employeeadmin project into the workspace.
+6)Import GPS project into the NETBEANS.
+7)Import database tables into the MY SQL WORKBENCH.
+8)Install  USB driver for your phone on your computer.This driver is easily avaliable on official website of company.
+9)Connect android phone to your computer with data cable.
+10)In eclipse ,open run configuration -select project.
+11) Select target as =active devices .
+12)Now run the project,this will push the app onto your phone.
+13)Now the app is successfully installed on your android phone.
+14)remove data cable,run app.
+

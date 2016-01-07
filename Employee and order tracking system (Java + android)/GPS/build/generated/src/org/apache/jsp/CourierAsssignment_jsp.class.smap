@@ -1,0 +1,28 @@
+SMAP
+CourierAsssignment_jsp.java
+JSP
+*S JSP
+*F
++ 0 CourierAsssignment.jsp
+CourierAsssignment.jsp
++ 1 header.html
+header.html
++ 2 menu_afterlogin.html
+menu_afterlogin.html
++ 3 footer.html
+footer.html
+*L
+1,58:52
+1#1,10:110
+58#0,2:120
+1#2,47:122
+59#0,25:169
+84,8:195
+91:203
+92:204,8
+93:212
+94,5:214
+98,65:219
+1#3,11:284
+162#0,5:295
+*E

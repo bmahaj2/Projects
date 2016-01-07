@@ -1,0 +1,39 @@
+SMAP
+view_005fcourier_005fassignment_jsp.java
+JSP
+*S JSP
+*F
++ 0 view_courier_assignment.jsp
+view_courier_assignment.jsp
++ 1 header.html
+header.html
++ 2 menu_afterlogin.html
+menu_afterlogin.html
++ 3 footer.html
+footer.html
+*L
+1,22:52
+1#1,10:74
+22#0,2:84
+1#2,47:86
+23#0,3:133
+26,8:137
+33,3:145
+35,3:148
+37:151
+38:152,3
+39:155
+40,2:157
+41,14:159
+55,20:174
+74,3:194
+77,3:197,3
+80:206
+81,2:207,3
+83:213,5
+84,3:218
+87,2:222
+88,7:224
+1#3,11:231
+94#0,6:242
+*E

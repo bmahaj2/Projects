@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pattern"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp" >
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:background="@drawable/dept"
+            android:text="\n\n\n\n\nDepartment"
+            android:onClick="go"
+             />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/emp1"
+            android:text="\n\n\n\n\nEmployee"
+            android:onClick="go2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:background="@drawable/mes"
+            android:text="\n\n\n\n\nMessage"
+            android:onClick="go3" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/complaint"
+            android:text="\n\n\n\n\nComplaint" 
+            android:onClick="go1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp" >
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:background="@drawable/track"
+            android:onClick="go4"
+            android:text="\n\n\n\n\nTrack" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="120dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/about5"
+            android:onClick="go5"
+            android:text="\n\n\n\n\n" />
+
+    </LinearLayout>
+
+</LinearLayout>

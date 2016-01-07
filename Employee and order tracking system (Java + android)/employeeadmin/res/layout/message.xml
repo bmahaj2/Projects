@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/pattern">
+    
+    
+    <TextView
+        android:id="@+id/textViewd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Depatment"
+        android:textStyle="bold" 
+          android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/msgspinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    
+    <TextView
+        android:id="@+id/textViewd1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Employees of Selected Department"
+        android:textStyle="bold" 
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/msglv1"
+        android:layout_width="match_parent"
+        android:layout_height="167dp" >
+    </ListView>
+    
+    
+    <TextView
+        android:id="@+id/textViewd2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Type Message"
+        android:textStyle="bold" 
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/msget1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/msgbt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:onClick="go" 
+          android:background="@drawable/sendmes" />
+
+    <TextView
+        android:id="@+id/messagetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</LinearLayout>
