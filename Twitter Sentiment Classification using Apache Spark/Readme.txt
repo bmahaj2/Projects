@@ -1,0 +1,1 @@
+html folder contains Index.html file which is the report file in html format. 

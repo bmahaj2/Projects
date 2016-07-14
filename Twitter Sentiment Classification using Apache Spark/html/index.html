@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>ASSIGNMENT 4</title>
+</head>
+<body>
+    <b>SUBMITTED BY : BHAVYA MAHAJAN</b>
+    <br />
+    <b>NETID:BMAHAJ2 </b>
+    <center><h1>ASSIGNMENT 4</h1></center>
+<center><h2>Twitter Sentiment Classification using Apache Spark</h2></center>
+<label>1.</label> <b>Describe your tweet processing steps. </b> 
+    <p>
+	<ul>
+	<li> First read the train.csv file and extract the polarity and text of the tweet from the file.</li>
+	<li> Then lowercase all the words of all the tweets.</li>
+	<li> Then then clean the tweet text using following steps. Regular expressions are used to clean the text.</li>
+		<ul>
+		<li> Replace words starting with http,https,http(s),or www. by URL </li>
+		<li> Replace words starting with @ with AT_USER </li>
+		<li> Replace two or more occurrences of the same character with two occurrences. i.e. ‘exciteddddd’ to ‘excitedd’</li>
+		<li> Ignore words that don’t start with an alphabet</li>
+		<li> Apply stemming using Snowball Stemmer</li>
+		<li> Strip punctuations</li>
+		<li> Use the stop words list to filter out low value words such as ‘the’, ‘is’ and ‘on’. Stopword list is given in stopword.txt .</li>
+		</ul>
+	</ul>
+	
+		
+    </p>
+    
+ <label>2.</label> <b>Describe your feature space. Did you decide to use unigrams, bigrams, or both? What is the size of your feature space? </b> 
+    <p>
+	To create the feature space I used HashingTF. HashingTF takes an RDD of lists as input and creates a LabeledPoint. For each word of each tweet we create a feature. LabeledPoint consists of label and features. I have used unigrams. I have not restricted the size of my feature space.It is of default size which is 2^20. My feature space contains all the words in all the tweets.
+	
+    </p>
+<label>3.</label> <b>Describe any extra work (i.e. parameter tuning) you did on three classifiers: NB, LOG and Decision Tree(DT). How did it help?</b> 
+    <p>
+	<br>I converted labels and tweets to LabeledPoint and then converted LabeledPoint to RDD as the three classifiers take RDD as input. Then I used 
+	model.clearThreshold() for LogisticRegression to find the prediction probability and by using this probability I could find the tweets which were
+	classified correctly and the tweets that were classified incorreclty along with their prediction probabilities.</br>
+
+        
+    </p>
+<label>4.</label> <b>For three classifiers (NB, LOG and DT), report training accuracy, 10-fold cross-validation accuracy, test accuracy, avg precision/recall/f1-score on test, and the confusion matrix on test. Any findings?</b> 
+    <p>
+		<b>For Naive Bayes</b>
+
+		<br>Training Accuracy= 0.8275 = 82.75%</br>
+		<br>10-fold cross-validation accuracy=0.742725= 74.2725%</br>
+		<br>Test accuracy=0.8133704735376045= 81.33%</br>
+		<br>Summary Stats for NaiveBayes</br>
+		<br>Precision = 0.852760736196319</br>
+		<br>Recall = 0.7637362637362637</br>
+		<br>F1 Score = 0.8057971014492754</br>
+		<br>Confusion matrix is printed below</br>
+		<br>153 &nbsp &nbsp	 24</br>
+		<br>43	&nbsp &nbsp 139</br>
+		<br>Area under ROC = 0.8140715216986404</br>
+		
+		<b>For LogisticRegression</b>
+		
+		<br>Training Accuracy= 0.90925= 90.925%</br>
+		<br>10-fold cross-validation accuracy=0.7239875= 72.398%</br>
+		<br>Test accuracy=0.7883008356545961= 78.8300</br>
+		<br>Summary Stats for Logistic Regression</br>
+		<br>Precision = 0.8296703296703297</br>
+		<br>Recall = 0.7704081632653061</br>
+		<br>F1 Score = 0.798941798941799</br>
+		<br>Confusion matrix is printed below</br>
+		<br>132	&nbsp &nbsp 31</br>
+		<br>45	&nbsp &nbsp 151</br>
+		<br>Area under ROC = 0.7877165207673683</br>
+		
+		
+		
+        
+    </p>
+<label>5.</label> <b>For three classifiers (NB, LOG and DT), plot training accuracy, 10-fold cross-validation accuracy and test accuracy together using matplotlib. You can check out this tutorial. Which classifier overfits the most?</b> 
+    <p>
+	<br> <b>Accuracy comparison for NaiveBayes and LogisticRegression</b><br>
+	<br><img src="accuracy.png" style="width:900px;height:600px;"></br>
+	
+	
+
+       <br>The classifier with greatest difference in training and test accuracy overfits the most. </br>
+	   <br> for NaiveBayes difference in Training and test accuracy is =0.8275-0.8133= 0.0142  </br>
+	   <br> for LogisticRegression difference in Training and test accuracy is =0.90925-0.788300=0.12095  </br>
+	   <br> So LogisticRegression classifer overfits the most</br>
+    </p>
+<label>6.</label> <b>Describe the following terms in the context of the assignment: precision, recall, f1-score, confusion matrix (true positive, true negative, false positive, false negative).</b> 
+    <p>
+        First of all we define the following terms
+		<ul>
+		<li>True Positive (TP) - label is positive and prediction is also positive</li>
+		<li>True Negative (TN) - label is negative and prediction is also negative</li>
+		<li>False Positive (FP) - label is negative but prediction is positive</li>
+		<li>False Negative (FN) - label is positive but prediction is negative</li>
+		</ul>
+		<ul>
+		<li>Precision:  Precision is the fraction of retrieved instances that are relevant. So in context of the assignment precision is the number of tweets whose original label and  predicted label are positive divided by the tweets whose predicted label are positive.
+		<br>precision=TP/(TP+FP)</br>
+		<br>precision=(Total number of tweets whose original label and predicted label is positive)/Total number of tweets whose predicted label is positive</br></li>
+		<br></br>
+		<li>Recall: Recall is  is the fraction of relevant instances that are retrieved. Recall is number of tweets whose original label and predicted label are positive divided by the total number of tweets whose original label are positive.
+		<br>precision=TP/(TP+FN)</br>
+		<br>precision=(Total number of tweets whose original label and predicted label is positive)/Total number of tweets whose original label is positive</br>
+		</li>
+		<br></br>
+		<li>F1 Score:The F1 score can be interpreted as a weighted average of the precision and recall.The traditional F-measure or balanced F-score (F1 score) is the harmonic mean of precision and recall.The F1 score can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst at 0.
+		<br>F1 Score=2*(Precision*Recall)/(Precision+Recall)</br>
+		</br></li>
+		<li>Confusion Matrix: A confusion matrix is a table that is often used to describe the performance of a classification model (or "classifier") on a set of test data for which the true values are known. It is represented by given matrix.
+		<br>TN &nbsp &nbsp FP</br>
+		<br>FN &nbsp &nbsp TP</br>
+		<br>Here rows denote Actual values and column denote prediction values.</br>
+		
+		</ul>
+		
+    </p>
+<label>7.</label> <b>For NB and LOG, plot the ROC curve and report the area under the curve. What do you learn from the ROC curve?</b> 
+    <p>
+	<br><img src="ROC.png" style="width:400px;height:300px;"></br>
+	<br>Area under the curve for NaiveBayes= 0.8140715216986404</br>
+	<br>Area under the curve for LogisticRegression=0.7877165207673683</br>
+	
+	<br>ROC Curve: This is a commonly used graph that summarizes the performance of a classifier over all possible thresholds. It is generated by plotting the True Positive Rate (y-axis) against the False Positive Rate (x-axis) as you vary the threshold for assigning observations to a given class.</br>
+	<br> We get to know the performance of a classifer over all possible thresholds from ROC Curve</br>
+	
+	
+	
+        
+    </p>
+<label>8.</label> <b>Report top 20 most informative features for all three classifiers. Any findings?</b> 
+    <p>
+	
+	<br>I used HashingTF and in HashingTF it is not possible to reverse hashing back to the feature .</br> 
+       
+    </p>
+<label>9.</label> <b>Which classifier performs the best? Why?</b> 
+    <p>
+	NaiveBayes classifer performs the best. In my program it shows test accuracy of 81.33%. It performs best because When the training data size is less relative to the features, the information/data on prior probabilities help in improving the results, which is true in my case, and also in NaiveBayes features are independent of each other which increases performance.
+        
+    </p>
+<label>10.</label> <b>Using the best classifer, print some test tweets that are classified correctly or incorreclty along with their prediction probabilities. Among correctly classified tweets, print 5 tweets with highest predicted probailities. Repeat this for incorrectly classified tweets.</b> 
+    <p>
+	
+	<br>Some tweets that were classified correctly along with their prediction probabilities are</br>
+	<ul>
+	<li>(0.9999939438476336, "@switchfoot http://twitpic.com/2y1zl - Awww, that's a bummer.  You shoulda got David Carr of Third Day to do it. ;D")</li>
+	<li>(0.9995619952238444, "@alydesigns i was out most of the day so didn't get much done ")</li>
+	<li>(0.9764762777988473, "really don't feel like getting up today... but got to study to for tomorrows practical exam... ")</li>
+	<li>(0.7974355272453987, "@BatManYNG I miss my ps3, it's out of commission  Wutcha playing? Have you copped 'Blood On The Sand'?")</li>
+	<li>(0.9975146449125533, 'sleep soon... i just hate saying bye and see you tomorrow for the night. ')</li>
+	</ul>
+	<br>Some tweets that were classified incorrectly along with their prediction probabilities are</br>
+	<ul>
+	<li>(0.051536823536216865, 'sadly is going to bed. ')</li>
+	<li>(0.6984757171907514, "@griffmiester no exchanging for me, my laptop hasn't arrived ")</li>
+	<li>(0.22495272423420345, '@SupaMagg that happened to me saturday night. along with my glittery green lighter! ')</li>
+	<li>(0.00840059763518824, '@ddlovato @David_Henrie ummmmm i cant find it. ')</li>
+	<li>(0.7487423280431363, "I'm ready for the weekend already. It's only Monday. ")</li>
+	</ul>
+	<br>5 correct tweets with highest predicted probability are </br>
+	<ul>
+	<li>@kristenkreuk fiuhh, nice to get info from you, i'm one of your fans from indonesia. and still waiting for your movie in my country  thanx</li>
+	<li>@switchfoot http://twitpic.com/2y1zl - Awww, that's a bummer.  You shoulda got David Carr of Third Day to do it. ;D</li>
+	<li>I heard he stopped singing.  It's a shameï¿½ ? http://blip.fm/~3xath</li>
+	<li>i could not update at all yesterday </li>
+	<li>The one day I have to go to school is the same day something exciting happens at parliament square </li>
+	</ul>
+<br>5 incorrect tweets with highest predicted probability are</br>
+<ul>
+<li>has a very sore hand</li> 
+<li>I need SIMS 3. Gaah!</li> 
+<li>thinks that Nigella does a shit tea add </li>
+<li>Argh...throttled to 64k up and down...I know dialup was slower than this, but man the net is painful at this speed </li>
+<li>Feeling soree, bad idea to go running when your sick </li>
+</ul>	
+       
+    </p>
+</body>
+</html>
